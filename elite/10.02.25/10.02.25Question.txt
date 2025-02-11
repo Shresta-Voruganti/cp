@@ -1,0 +1,488 @@
+D3P1 :
+
+In a distant galaxy, there exists an ancient space station covered in a vast 
+array of digital codes. These codes are believed to hold the key to unlocking 
+powerful alien technology. The interstellar explorers call these codes "prime 
+sequences."
+
+The prime-sequence beauty of the digital code is defined as the number of prime 
+sequences that meet the following conditions:
+    -The prime sequence has a length of k.
+    -The prime sequence is a divisor of the entire digital code.
+    -The prime sequence is a prime number.
+
+Given the digital code on the space station, represented as an integer code, and
+the length of the prime sequences k, return the prime-sequence beauty of the code.
+
+Note:
+-----
+Leading zeros in prime sequences are allowed.
+0 is not a divisor of any value.
+A prime sequence is a contiguous sequence of characters in the main digital code.
+
+Input Format:
+-------------
+Line-1: space separated String and integer, code and K
+
+Output Format:
+-------------
+An integer, the prime-sequence beauty of the code.
+
+
+Sample Input:
+-------------
+239246 2 
+
+Sample Output:
+--------------
+1 
+
+Explanation:
+------------
+The following are the prime sequences of length k:
+    "23" from "239246": 23 is a divisor of 239246 and is a prime number.
+    "39" from "239246": 39 is not a divisor.
+    "92" from "239246": 92 is not a divisor.
+    "24" from "239246": 24 is is not a divisor 239246.
+    "46" from "239246": 46 is a divisor of 239246 but is not a prime number.
+    Therefore, the prime-sequence beauty is 1.
+
+Sample Input:
+-------------
+24224 1
+
+Sample Output:
+--------------
+3
+
+------------------------------------------------------------------------------------
+
+
+D3P2 :
+
+In a film festival, there is a lineup of movies, each with a rating. The festival 
+organizer wants to find the maximum total rating of 'k' sequence of movies while 
+following these rules:
+    1. The sequence must be exactly k movies long.
+    2. Each movie in the sequence must have a distinct rating.
+    3. None of the movies in the sequence should have a restricted rating, as 
+       these are reserved for special screenings.
+
+Given an array movieRatings representing the sequence of movie ratings, an integer k 
+representing the length of the sequence, and a set restrictedRatings (of size m) of 
+special ratings, find the maximum total rating of any valid sequence. 
+If no valid sequence exists, return -1.
+
+Input Format:
+-------------
+Line-1: 3 space separated integers, n, k, m
+Line-2: n space separated integers, movieRatings[].
+Line-3: m space separated integers, restrictedRatings[].
+
+Output Format:
+-------------
+An integer, the maximum total rating of any valid sequence
+
+
+Sample Input-1:
+---------------
+7 3 2
+1 5 4 2 9 9 9
+2 9
+
+Sample Output-1:
+----------------
+10
+
+Explanation: 
+------------
+The sequences of movie ratings with length 3 are:
+- [1, 5, 4] which meets the requirements and has a total rating of 10.
+- [5, 4, 2] which does not meet the requirements because 2 is in the 
+restricted set.
+- [4, 2, 9] which does not meet the requirements because 2 and 9 are in 
+the restricted set.
+- [2, 9, 9] which does not meet the requirements because 2 and 9 are in 
+the restricted set and 9 is repeated.
+- [9, 9, 9] which does not meet the requirements because 9 is in 
+the restricted set and repeated.
+
+We return 10 because it is the maximum total rating of all the sequences 
+that meet the conditions.
+
+
+Sample Input-2:
+---------------
+3 3 1
+4 4 4
+4
+
+Sample Output-2:
+----------------
+-1
+
+Explanation: The sequences of movie ratings with length 3 are:
+[4, 4, 4] which does not meet the requirements because 4 is repeated and in the restricted set.
+We return -1 because no sequences meet the conditions.
+
+Constraints:
+------------
+0 <= m <= n <=1000
+k <= n
+0 ≤ restrictedRatings.length ≤ 1000
+
+
+------------------------------------------------------------------------------------
+
+
+D3P3 :
+
+You are given an integer array nums and two integers l and r. Your task is to 
+analyze the volatility of a sequence of values. The volatility of a sequence is 
+defined as the difference between the maximum and minimum values in that sequence.
+
+You need to determine the sequence with the highest volatility among all 
+sequences of length between l and r (inclusive).
+
+Return the highest volatility. If no such sequence exists, return -1.
+
+Input Format:
+-------------
+Line-1: 3 space separated integers, n, l, r
+Line-2: n space separated integers, nums[].
+
+Output Format:
+-------------
+An integer, the highest volatility.
+
+
+Sample Input-1:
+---------------
+5 2 3
+8 3 1 6 2
+
+Sample Output-1:
+----------------
+7
+
+Explanation:
+------------
+The possible sequences of length between l = 2 and r = 3 are:
+
+[8, 3] with a volatility of 8−3=5
+[3, 1] with a volatility of 3−1=2
+[1, 6] with a volatility of 6−1=5
+[8, 3, 1] with a volatility of 8−1=7
+The sequence [8, 3, 1] has the highest volatility of 7.
+
+Sample Input-2:
+---------------
+4 2 4
+5 5 5 5
+
+Sample Output-2:
+----------------
+0
+
+Explanation:
+------------
+All possible sequences have no volatility as the maximum and minimum values 
+are the same, resulting in a difference of 0.
+ 
+
+----------------------------------------------------------------------------------
+
+
+D3JS1 :
+
+/*
+In this assignment, you will simulate the workflow of a food delivery app that 
+has the following tasks:
+	- First Concurrent Activities: Fetch menu data from the server and check customer details.
+	- Sequential Activities: Prepare the food and package it.
+	- Second Concurrent Activities: Assign a delivery person and update the delivery status.
+
+Each task takes different amounts of time, and some tasks can happen concurrently 
+while others need to happen sequentially.
+
+Requirements:
+=============
+Use async/await and promises to model the system.
+	Task 1: Fetch menu data from the server should take 2 seconds.
+	Task 2: Check customer details should take 1.5 seconds.
+	Task 3: Prepare the food should take 3 seconds.
+	Task 4: Package the food should take 2 seconds.
+	Task 5: Assign a delivery person should take 1 second.
+	Task 6: Update the delivery status should take 1.5 second.
+Handle any errors that may occur (for example, if the delivery fails).
+
+Hint:
+-----
+You will need to:
+Use Promise.all() for concurrent tasks.
+Use await for sequential tasks.
+
+Expected Output:
+===============
+Starting process for order 123...
+Fetching menu data...
+Checking details for customer ID: 456...
+Menu data fetched.
+Details verified for customer ID: 456.
+Preparing food for order 123...
+Food for order 123 prepared.
+Packaging food for order 123...
+Food for order 123 packaged.
+Assigning a delivery person for order 123...
+Updating delivery status for order 123...
+Delivery person assigned for order 123.
+Delivery status updated for order 123.
+Order 123 process completed!
+Passed
+
+*/
+function fetchMenu() {
+  return new Promise((resolve) => {
+        //Write your logic here
+        
+  });
+}
+
+function checkCustomerDetails(customerId) {
+  return new Promise((resolve) => {
+    
+    //Write your logic here
+    
+  });
+}
+
+function prepareFood(orderId) {
+  return new Promise((resolve) => {
+    
+    //Write your logic here
+    
+  });
+}
+
+function packageFood(orderId) {
+  return new Promise((resolve) => {
+    
+    //Write your logic here
+    
+  });
+}
+
+function assignDeliveryPerson(orderId) {
+  return new Promise((resolve) => {
+    
+    //Write your logic here
+    
+  });
+}
+
+function updateDeliveryStatus(orderId) {
+  return new Promise((resolve) => {
+    console.log(`Updating delivery status for order ${orderId}...`);
+    setTimeout(() => {
+      resolve(`Delivery status updated for order ${orderId}.`);
+    }, 1500); // Simulates a 1.5-second delay
+  });
+}
+
+// implement this function to call the above functions in a correct order.
+async function processOrder(orderId, customerId) {
+  console.log(`Starting process for order ${orderId}...`);
+
+  // Properly Concurrent Activities 1: Fetch menu and check customer details
+  const [menuFetched, customerVerified] = await Promise.all([
+    fetchMenu(),
+    checkCustomerDetails(customerId),
+  ]);
+  console.log(menuFetched);
+  console.log(customerVerified);
+
+  // Sequential Activities: Prepare and package food
+  const foodPrepared = await prepareFood(orderId);
+  console.log(foodPrepared);
+
+  const foodPackaged = await packageFood(orderId);
+  console.log(foodPackaged);
+
+  // Properly Concurrent Activities 2: Assign delivery person and update status
+  const [deliveryAssigned, statusUpdated] = await Promise.all([
+    assignDeliveryPerson(orderId),
+    updateDeliveryStatus(orderId),
+  ]);
+  console.log(deliveryAssigned);
+  console.log(statusUpdated);
+
+  console.log(`Order ${orderId} process completed!`);
+}
+
+async function solution() { 
+const startTime = Date.now();
+// Test the process
+await processOrder(123, 456);
+const endTime = Date.now();
+// Calculate the elapsed time
+const elapsedTime = endTime - startTime;
+	if(elapsedTime<=9000){
+		console.log(`Passed`);
+	}
+	else {
+		console.log(`Failed`);
+	}
+}
+
+solution();
+
+-----------------------------------------------------------------------------
+
+
+D3JS2 :
+
+/*
+In this assignment, you will simulate the workflow of a movie booking app that 
+has the following tasks:
+	First Concurrent Activities:
+		- Fetch available movies from the server.
+		- Check user details (e.g., whether they are logged in or not).
+
+	Sequential Activities:
+		- Choose a movie to book.
+		- Select showtime for the movie.
+		- Make payment for the booking.
+		
+	Second Concurrent Activities:
+		- Send confirmation email
+		- Send confirmation SMS
+
+Each task takes different amounts of time, and some tasks can happen concurrently 
+while others need to happen sequentially.
+
+Requirements:
+=============
+Use async/await and promises to model the system.
+	Task 1: Fetch available movies from the server should take 2 seconds.
+	Task 2: Check user details should take 1.5 seconds.
+	Task 3: Choose a movie to book should take 1 second.
+	Task 4: Select showtime for the movie should take 1.5 seconds.
+	Task 5: Make payment for the booking should take 2 seconds.
+	Task 6: Send confirmation email should take 1.5 seconds.
+	Task 7: Send confirmation SMS should take 1 second.
+Handle any errors that may occur (for example, if the booking fails).
+
+Hint:
+-----
+You will need to:
+Use Promise.all() for concurrent tasks.
+Use await for sequential tasks.
+
+Expected Output:
+===============
+Starting booking process for user ID 101...
+Fetching available movies...
+Checking user details for user ID: 101...
+User ID 101 verified.
+Choosing a movie...
+Movie chosen: Movie A
+Selecting showtime for Movie A...
+Showtime for Movie A selected.
+Making payment...
+Payment successful.
+Sending email confirmation...
+Sending SMS confirmation...
+Email confirmation sent.
+SMS confirmation sent.
+Booking process completed for user 101.
+Booking Successful
+
+*/
+
+// fix the bug in this method
+function fetchAvailableMovies() {
+  return new Promise((resolve) => {
+    console.log("Fetching available movies...");
+    setTimeout(() => {
+      resolve(["Movie A", "Movie B", "Movie C", "Movie D"]);
+    }, 2); // Simulate 2 seconds delay
+  });
+}
+
+function checkUserDetails(userId) {
+  return new Promise((resolve) => {
+    
+    // Write your logic here
+  });
+}
+
+function chooseMovie(movieList) {
+  return new Promise((resolve) => {
+    
+    // Write your logic here ( choose Movie A )
+  });
+}
+
+function selectShowtime(movie) {
+  return new Promise((resolve) => {
+   
+    // Write your logic here
+  });
+}
+
+function makePayment() {
+  return new Promise((resolve) => {
+   
+    // Write your logic here (e.g.,refer sample output)
+  });
+}
+
+function sendEmailConfirmation() {
+  return new Promise((resolve) => {
+    
+    // Write your logic here
+  });
+}
+
+function sendSMSConfirmation() {
+  return new Promise((resolve) => {
+    
+    // Write your logic here
+  });
+}
+
+// Main function to process the movie booking
+async function processBooking(userId) {
+  console.log(`Starting booking process for user ID ${userId}...`);
+  
+  // Write your logic here in the following order.
+
+  // First Concurrent Activities: Fetch available movies and check user details
+  
+  // Sequential Activities: Choose movie and select showtime
+
+  // Concurrent Activities: Send email and SMS confirmations
+
+  console.log(`Booking process completed for user ${userId}.`);
+}
+
+
+async function solution() { 
+const startTime = Date.now();
+// Test the process for a specific user
+await processBooking(101);
+const endTime = Date.now();
+// Calculate the elapsed time
+const elapsedTime = endTime - startTime;
+	if(elapsedTime>=4000 && elapsedTime<=9000){
+		console.log(`Booking Successful`);
+	}
+	else {
+		console.log(`Booking Failure`);
+	}
+}
+
+solution();
+
+
+--------------------------------------------------------------------------
