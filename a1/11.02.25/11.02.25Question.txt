@@ -1,0 +1,287 @@
+AP5 :
+
+You are given an array people, where each element people[i] represents the weight of the i-th person. 
+You also have an unlimited number of boats, but each boat has a maximum weight capacity defined by limit.
+
+Each boat can carry at most two people at the same time, as long as their combined weight does not exceed the limit.
+
+Your task is to determine the minimum number of boats required to transport all the given people across safely.
+
+Input Format:
+-------------
+Line 1: An integer N, representing the number of people.
+Line 2: N space-separated integers, representing the weight of each person.
+Line 3: An integer limit, representing the maximum weight capacity of a boat.
+
+Output Format:
+--------------
+Print a single integer, the minimum number of boats needed.
+
+Sample Input-1:
+---------------
+2
+1 2
+3
+
+Sample Output-1:
+----------------
+1
+
+Explanation: Only 1 boat is needed, as both people (weights 1 and 2) fit within the limit of 3.
+
+Sample Input-2:
+---------------
+4
+3 2 2 1
+3
+
+Sample Output-2:
+----------------
+3
+
+Explanation:
+------------
+Boat 1: (1,2)
+Boat 2: (2)
+Boat 3: (3)
+Total boats required: 3.
+
+Sample Input-3:
+---------------
+4
+3 5 3 4
+5
+
+Sample Output-3:
+----------------
+4
+
+Explanation:
+------------
+Boat 1: (3)
+Boat 2: (3)
+Boat 3: (4)
+Boat 4: (5)
+Total boats required: 4.
+
+
+------------------------------------------------------------------------------------
+
+
+AP7 : 
+
+You are given a 0-indexed string blocks of length n, 
+where each character in blocks[i] represents the color of the i-th block:
+-> 'W' represents a white block.
+-> 'B' represents a black block.
+You are also given an integer k, which represents the desired number of consecutive black blocks.
+
+Operation Allowed is You can recolor a white block (W) to black (B) in a single operation.
+
+Your goal is to determine the minimum number of operations required 
+to ensure that at least one sequence of k consecutive black blocks exists.
+
+You are given a 0-indexed string blocks of length n, 
+where blocks[i] is either 'W' or 'B', representing the color of the ith block. 
+The characters 'W' and 'B' denote the colors white and black, respectively.
+
+
+Input Format: 
+-------------
+Line-1: A string 'blocks' representing the sequence of blocks.
+Line-2: An integer 'k' (desired consecutive black blocks).
+
+Output Format:
+--------------
+Line-1: A single integer representing the minimum number of operations required.
+ 
+Sample Input-1:
+---------------
+WBBWWBBWBW
+7
+
+Sample Output-1:
+----------------
+3
+
+Explanation:
+-------------
+One way to achieve 7 consecutive black blocks is to recolor the 0th, 3rd, and 4th blocks
+so that blocks = "BBBBBBBWBW". 
+It can be shown that there is no way to achieve 7 consecutive black blocks in less than 3 operations.
+Therefore, we return 3.
+
+
+Sample Input-2:
+---------------
+WBWBBBW
+2
+
+Sample Output-2:
+----------------
+0
+
+Explanation:
+-------------
+No changes need to be made, since 2 consecutive black blocks already exist.
+Therefore, we return 0.
+ 
+
+Constraints:
+------------
+-> n == blocks.length
+-> 1 <= n <= 100
+-> blocks[i] is either 'W' or 'B'.
+-> 1 <= k <= n
+
+
+----------------------------------------------------------------------------------------
+
+
+AP8 :
+
+A string is good if there are no repeated characters.
+Given a string s, return the number of good substrings of length three in s.
+Note that if there are multiple occurrences of the same substring, every occurrence should be counted.
+A substring is a contiguous sequence of characters in a string.
+
+Sample Input-1:
+---------------
+xyzzaz
+
+Sample Output-1:
+----------------
+1
+
+Explanation: 
+------------
+There are 4 substrings of size 3: "xyz", "yzz", "zza", and "zaz". 
+The only good substring of length 3 is "xyz".
+
+Sample Input-2:
+---------------
+aababcabc
+
+Sample Output-2:
+----------------
+4
+
+Explanation: 
+------------
+There are 7 substrings of size 3: "aab", "aba", "bab", "abc", "bca", "cab", and "abc".
+The good substrings are "abc", "bca", "cab", and "abc".
+
+
+-------------------------------------------------------------------------------------------
+
+
+AP9 :
+
+You are visiting a farm that has a single row of fruit trees arranged from left to right.
+
+The trees are represented by an integer array fruits where fruits[i] is the type of fruit the ith tree produces.
+You want to collect as much fruit as possible. 
+
+However, the owner has some strict rules that you must follow:
+You only have two baskets, and each basket can only hold a single type of fruit. 
+There is no limit on the amount of fruit each basket can hold.
+
+Starting from any tree of your choice, you must pick exactly one fruit from every tree (including the start tree)
+while moving to the right. The picked fruits must fit in one of your baskets.
+
+Once you reach a tree with fruit that cannot fit in your baskets, you must stop.
+Given the integer array fruits, return the maximum number of fruits you can pick.
+
+Sample Input-1:
+---------------
+3
+1 2 1
+
+Sample Output-1: 
+----------------
+3
+
+Explanation: We can pick from all 3 trees.
+
+Sample Input-2:
+--------------- 
+4
+0 1 2 2 
+
+Sample Output-2: 
+----------------
+3
+
+Explanation: We can pick from trees [1,2,2].
+If we had started at the first tree, we would only pick from trees [0,1].
+
+Sample Input-3: 
+---------------- 
+5
+1 2 3 2 2
+
+Sample Output-4: 
+----------------
+4
+
+Explanation: We can pick from trees [2,3,2,2].
+If we had started at the first tree, we would only pick from trees [1,2].
+
+
+-------------------------------------------------------------------------------------------------
+
+
+AP10 :
+
+You are given an array books, where each element represents the time (in minutes) required to read a book. 
+You are also given an integer k, which represents the total available reading time in minutes.
+
+Your task is to determine the maximum number of books that can be read within the given time k 
+while ensuring that the sum of reading times does not exceed k.
+
+You must find the longest contiguous subarray where the sum of elements is less than or equal to k, 
+and return its length.
+
+Input Format:
+-------------
+Line-1: An integer 'n' representing the number of books.
+Line-2: 'n' space-separated integers representing the time (in minutes) required to read each book.
+Line-3: An integer 'k', the available reading time in minutes.
+
+Output Format:
+--------------
+Line-1: An integer representing the maximum number of books that can be read within 'k' minutes.
+
+Sample Input-1:
+---------------
+8
+1 1 2 1 1 1 4 2
+8
+
+Sample Output-1:
+----------------
+6
+
+Explanation:
+------------
+We must find the longest subarray where the sum is ≤ 8.
+Possible valid subarrays: [1, 1, 2, 1, 1, 1], [1, 2, 1, 1, 1], [2, 1, 1, 1], etc.
+The longest valid subarray has a length of 6.
+
+Sample Input-2:
+---------------
+7
+2 3 1 2 4 3 1
+5
+
+Sample Output-2:
+----------------
+3
+
+Explanation:
+-------------
+Possible valid subarrays: [2, 3], [3, 1, 2], [1, 2, 1], [2, 3], etc.
+The longest valid subarray has a length of 3.
+
+
+------------------------------------------------------------------------------------------
