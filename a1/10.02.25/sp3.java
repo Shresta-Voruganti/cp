@@ -14,7 +14,9 @@ public class sp3 {
     }
 
     public static int kthsum(int[] arr, int n, int k) {
-        int numsets = (int) Math.pow(2, n);
+        // int numsets = (int) Math.pow(2, n);
+        // Arrays.sort(arr);
+        int numsets = (n * (n + 1)) / 2;
         if(k > numsets) {
             return 0;
         }
