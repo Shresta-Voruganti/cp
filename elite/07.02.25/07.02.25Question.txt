@@ -1,0 +1,262 @@
+D2P1 :
+
+In a software development company, a team works on various projects over n weeks. 
+The team completes a certain number of tasks tasks[i] each week and dedicates 
+hours[i] hours of work. Given an integer k, for every consecutive sequence of 
+k weeks (tasks[i], tasks[i+1], ..., tasks[i+k-1] and 
+hours[i], hours[i+1], ..., hours[i+k-1] for all 0 <= i <= n-k), 
+they evaluate T, the total number of tasks completed during that sequence 
+of k weeks, and E, the total hours of work during that sequence of k weeks:
+
+a) If T < lower and E >= work_goal, the team performed very poorly and loses 2 points
+b) If T < lower and E < work_goal, the team performed poorly and loses 1 point.
+c) If T >= upper and E >= work_goal, the team performed well and gains 1 point.
+d) If T >= upper and E < work_goal, the team performed exceptionally well and gains 2 points.
+e) Otherwise, the team's performance is normal and there is no change in points.
+
+Initially, the team starts with zero points. Return the total number of points 
+the team has after working for n weeks. Note that the total points can be negative.
+
+Example 1
+Input:
+n = 5
+tasks = [10, 20, 30, 40, 50]
+hours = [30, 20, 10, 30, 40]
+k = 2
+lower = 35
+upper = 70
+work_goal = 45
+
+Output: 1
+Explanation:
+For [10, 20] and [30, 20]:
+T = 30 < lower and E = 50 >= work_goal, the team performed very poorly and loses 2 points.
+
+For [20, 30] and [20, 10]:
+T = 50 >= lower and T <= upper and E = 30 < work_goal, no change in points.
+
+For [30, 40] and [10, 30]:
+T = 70 = upper and E = 40 < work_goal, the team performed exceptionally well and 
+gains 2 points.
+
+For [40, 50] and [30, 40]:
+T = 90 > upper and E = 70 >= work_goal, the team performed well and gains 1 point.
+
+Therefore, the team gains 1 point (0 - 2 + 2 + 1 = 1).
+
+Sample Input=
+4	//n
+5 8 10 15
+25 30 20 25
+3	//k
+25	//lower
+40	//upper
+60	//work_goal
+Sample Output=
+-2
+
+--------------------------------------------------------------------------------------
+
+
+D2P2 :
+
+You are a treasure hunter exploring an ancient vault filled with 
+treasure boxes. The vault is represented as an array treasures of 
+n integers, where each integer corresponds to the value of a treasure. 
+You have a special key that allows you to scan and select treasures 
+from a sub-vault (a segment of the array) of size k. Additionally, 
+you have a magical power factor f and a priority filter x.
+
+The priority-weighted treasure sum of a sub-vault is calculated as follows:
+	1. Count the occurrences of each treasure value in the sub-vault.
+	2. Assign a priority score to each treasure based on its frequency 
+	multiplied by the treasure's value raised to the power of f 
+	(i.e., priority_score[treasure] = frequency[treasure] * (value^f)).
+	3. Select only the top x treasures based on their priority scores. 
+	If two treasures have the same priority score, the treasure with 
+	the higher value is prioritized.
+	4. Calculate the total value of the selected treasures.
+
+Your task is to return an integer array priority_sums of length n - k + 1, 
+where priority_sums[i] represents the priority-weighted treasure sum for 
+the sub-vault corresponding to treasures[i..i + k - 1].
+
+Input Format:
+---------------
+Line-1: Four space separated integers, N, K, X, F
+Line-2: N space separated integers, boxes[].
+
+Output Format:
+-----------------
+An integer array, priority_sums[], of length n - k + 1
+
+
+Sample Input-1:
+-----------------
+8 5 2 2
+1 2 3 1 2 2 3 4
+
+Sample Output-1:
+--------------------
+[7, 9, 10, 7]
+
+Explanation:
+We calculate the priority-weighted treasure sum for each sub-vault:
+
+1. Sub-vault 1: [1, 2, 3, 1, 2]
+   - Frequencies: {1: 2, 2: 2, 3: 1}
+   - Priority scores:
+     - 1 → 2 * (1^2) = 2
+     - 2 → 2 * (2^2) = 8
+     - 3 → 1 * (3^2) = 9
+   - Top 2 treasures by priority: 3 (score 9) and 2 (score 8).
+   - Total value: 2 + 3 + 2  = 7.
+
+2. Sub-vault 2: [2, 3, 1, 2, 2]
+   - Frequencies: {2: 3, 3: 1, 1: 1}
+   - Priority scores:
+     - 2 → 3 * (2^2) = 12
+     - 3 → 1 * (3^2) = 9
+     - 1 → 1 * (1^2) = 1
+   - Top 2 treasures by priority: 2 (score 12) and 3 (score 9).
+   - Total value: 2 + 2 + 2 + 3 = 9.
+
+3. Sub-vault 3: [3, 1, 2, 2, 3]
+   - Frequencies: {3: 2, 2: 2, 1: 1}
+   - Priority scores:
+     - 3 → 2 * (3^2) = 18
+     - 2 → 2 * (2^2) = 8
+     - 1 → 1 * (1^2) = 1
+   - Top 2 treasures by priority: 3 (score 18) and 2 (score 8).
+   - Total value: 3 + 2 + 2 + 3 = 10.
+
+4. Sub-vault 4: [1, 2, 2, 3, 4]
+   - Frequencies: {1: 1, 2: 2, 3: 1, 4: 1}
+   - Priority scores:
+     - 2 → 2 * (2^2) = 8
+     - 3 → 1 * (3^2) = 9
+     - 4 → 1 * (4^2) = 16
+     - 1 → 1 * (1^2) = 1
+   - Top 2 treasures by priority: 4 (score 16) and 3 (score 9).
+   - Total value: 3 + 4  = 7.
+
+Sample Input-2:
+-----------------
+6 3 2 1
+5 5 6 7 5 6
+
+Sample Output-1:
+--------------------
+[16, 13, 13, 13]
+
+Constraints:
+1. 1 <= n == treasures.length <= 50
+2. 1 <= treasures[i] <= 50
+3. 1 <= x <= k <= treasures.length
+4. 1 <= f <= 10
+
+
+----------------------------------------------------------------------
+
+D2P4 :
+
+You are developing an application for a garden management system where each tree 
+in the garden is represented as a binary tree structure. The system needs to 
+allow users to plant new trees in a systematic way, ensuring that each tree is 
+filled level by level.
+
+A gardener wants to:
+ - Plant trees based on user input.
+ - Ensure trees grow in a balanced way by filling nodes level by level.
+ - Inspect the garden layout by performing an in-order traversal, which helps 
+   analyze the natural arrangement of trees.
+
+Your task is to implement a program that:
+    - Accepts a list of N tree species (as integers).
+    - Builds a binary tree using level-order insertion.
+    - Displays the in-order traversal of the tree.
+
+Input Format:
+-------------
+- An integer N representing the number of tree plants.
+- A space-separated list of N integers representing tree species.
+
+Output Format:
+--------------
+A list of integers, in-order traversal of tree.
+
+
+Sample Input:
+-------------
+7
+1 2 3 4 5 6 7
+
+Sample Output:
+--------------
+4 2 5 1 6 3 7
+
+
+Explanation:
+------------
+The tree looks like this:
+
+        1
+       / \
+      2   3
+     / \  / \
+    4   5 6  7
+The in order is : 4 2 5 1 6 3 7
+
+
+----------------------------------------------------------------------
+
+
+D2P5 :
+
+Write a program to construct a binary tree from level-order input, while treating -1 
+as a placeholder for missing nodes. The program reads input, constructs the tree, 
+and provides an in-order traversal to verify correctness.
+
+Input Format:
+---------------
+Space separated integers, level order data (where -1 indiactes null node).
+
+Output Format:
+-----------------
+Print the in-order data of the tree.
+
+Sample Input:
+----------------
+1 2 3 -1 -1 4 5
+
+Sample Output:
+----------------
+2 1 4 3 5
+
+Explanation:
+--------------
+    1
+   / \
+  2   3
+     / \
+    4   5
+
+
+Sample Input:
+----------------
+1 2 3 4 5 6 7
+
+Sample Output:
+----------------
+4 2 5 1 6 3 7
+
+Explanation:
+--------------
+        1
+       / \
+      2   3
+     / \  / \
+    4  5 6  7
+
+
+-------------------------------------------------------------------------------------------
