@@ -1,0 +1,141 @@
+D5P1 :
+
+Given the in-order and post-order traversals of a binary tree, construct 
+the original binary tree. For the given Q number of queries, 
+each query consists of a lower level and an upper level. 
+The output should list the nodes in the order they appear in a level-wise.
+
+Input Format:
+-------------
+An integer N representing the number nodes.
+A space-separated list of N integers representing the similar to in-order traversal.
+A space-separated list of N integers representing the similar to post-order traversal.
+An integer Q representing the number of queries.
+Q pairs of integers, each representing a query in the form:
+Lower level (L)
+Upper level (U)
+
+Output Format:
+For each query, print the nodes in order within the given depth range
+
+Example
+Input:
+7
+4 2 5 1 6 3 7
+4 5 2 6 7 3 1
+2
+1 2
+2 3
+Output:
+[1, 2, 3]
+[2, 3, 4, 5, 6, 7]
+
+Explanation:
+        1
+       / \
+      2   3
+     / \  / \
+    4   5 6  7
+Query 1 (Levels 1 to 2): 1 2 3
+Query 2 (Levels 2 to 3): 2 3 4 5 6 7
+
+
+----------------------------------------------------------------------------------
+
+
+D5P3 :
+
+7Construct the binary tree from the given In-order and Pre-order. 
+Find Nodes Between Two Levels in Spiral Order.
+The spiral order is as follows:
+-> Odd levels → Left to Right.
+-> Even levels → Right to Left.
+
+Input Format:
+--------------
+An integer N representing the number of nodes.
+A space-separated list of N integers representing the in-order traversal.
+A space-separated list of N integers representing the pre-order traversal.
+Two integers:
+Lower Level (L)
+Upper Level (U)
+
+Output Format:
+Print all nodes within the specified levels, but in spiral order.
+
+Example:
+Input:
+7
+4 2 5 1 6 3 74 2 
+1 2 4 5 3 6 7
+2 3
+
+Output:
+3 2 4 5 6 7
+
+Explanation:
+Binary tree structure:
+        1
+       / \
+      2   3
+     / \  / \
+    4   5 6  7
+
+Levels 2 to 3 in Regular Order:
+Level 2 → 2 3
+Level 3 → 4 5 6 7
+
+Spiral Order:
+Level 2 (Even) → 3 2 (Right to Left)
+Level 3 (Odd) → 4 5 6 7 (Left to Right)
+
+
+---------------------------------------------------------------------------------
+
+
+D5P4 :
+
+Construct Tree from the given Level-order and In-order.
+Compute the Depth and Sum of the Deepest nodes in the Binary tree
+
+Input Format:
+-------------
+An integer N representing the number of nodes.
+A space-separated list of N integers representing the in-order traversal.
+A space-separated list of N integers representing the level-order traversal.
+
+Output Format:
+--------------
+Print two values:
+->The maximum number of levels.
+->The sum of all node values at the deepest level.
+
+Example:
+-------------
+Input:
+11
+7 8 4 2 5 9 11 10 1 6 3
+1 2 3 4 5 6 7 9 8 10 11
+
+Output:
+6 11
+
+Explanation:
+The binary tree structure:
+           1
+         /   \
+       2       3
+      / \     /
+     4   5   6
+    /     \   
+   7       9
+    \       \
+     8      10
+            /
+          11
+Maximum Depth: 6
+nodes at the Deepest Level (6): 11
+Sum of nodes at Level 6: 11
+
+
+---------------------------------------------------------------------------------
