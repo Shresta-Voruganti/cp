@@ -37,18 +37,18 @@ class Solution
 //        head.next = null;      // Disconnect the old link
 //
 //        return newHead; // Return the new head of the reversed list
-        Node prev = null;
-        Node curr = head;
-        Node next;
+        Node previous = null;
+        Node currNode = head;
+        Node nextNode;
 
-        while (curr != null) {
-            next = curr.next;  // Store next node
-            curr.next = prev;   // Reverse the link
-            prev = curr;        // Move prev to current
-            curr = next;        // Move to next node
+        while (currNode != null) {
+            nextNode = currNode.next;  // Store next node
+            currNode.next = previous;   // Reverse the link
+            previous = currNode;        // Move prev to current
+            currNode = nextNode;        // Move to next node
         }
 
-        return prev; // New head of reversed list
+        return previous; // New head of reversed list
     }
 
 
