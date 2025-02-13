@@ -27,28 +27,28 @@ class Solution
     }
 
     Node reverse(Node head) {
-//        if (head == null || head.next == null) {
-//            return head; // Base case: if only one node, return as is
-//        }
-//
-//        Node newHead = reverse(head.next); // Recursively reverse the rest of the list
-//
-//        head.next.next = head; // Reverse the link (make next node point to current)
-//        head.next = null;      // Disconnect the old link
-//
-//        return newHead; // Return the new head of the reversed list
-        Node prev = null;
-        Node curr = head;
-        Node next;
-
-        while (curr != null) {
-            next = curr.next;  // Store next node
-            curr.next = prev;   // Reverse the link
-            prev = curr;        // Move prev to current
-            curr = next;        // Move to next node
+        if (head == null || head.next == null) {
+            return head; // Base case: if only one node, return as is
         }
 
-        return prev; // New head of reversed list
+        Node newHead = reverse(head.next); // Recursively reverse the rest of the list
+
+        head.next.next = head; // Reverse the link (make next node point to current)
+        head.next = null;      // Disconnect the old link
+
+        return newHead; // Return the new head of the reversed list
+        // Node prev = null;
+        // Node curr = head;
+        // Node next;
+
+        // while (curr != null) {
+        //     next = curr.next;  // Store next node
+        //     curr.next = prev;   // Reverse the link
+        //     prev = curr;        // Move prev to current
+        //     curr = next;        // Move to next node
+        // }
+
+        // return prev; // New head of reversed list
     }
 
 
