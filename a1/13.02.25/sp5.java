@@ -20,6 +20,9 @@ public class sp5 {
     }
 
     public static int[] closestpair(int[] a1, int[] a2, int n1, int n2, int target) {
+        // if(n1 == 0 || n2 == 0) {
+        //     return new int[]{-1, -1};
+        // }
         int[] res = new int[2];
         int left = 0;
         int right = n2 - 1;
@@ -35,10 +38,10 @@ public class sp5 {
                 res[1] = a2[right];
             }
 
-            else if(sum < target) {
+            if(sum < target) {
                 left++;
             }
-            else if(sum > target) {
+            else {
                 right--;
             }
         }
