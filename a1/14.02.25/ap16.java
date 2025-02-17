@@ -13,6 +13,13 @@ public class ap16 {
     }
 
     public static int[] sorting(int n, int[] arr) {
+	if(arr == null || n == 0) {
+            return new int[]{0};
+        }
+        if(n == 1) {
+            return arr;
+        }
+
         int[] res = new int[n];
         for(int i = 0; i < n; i++) {
             res[i] = arr[i];
