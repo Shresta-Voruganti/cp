@@ -1,0 +1,152 @@
+D8P1 :
+
+VishnuVardan is working with Decision Trees for AI-based predictions.
+To analyze alternative outcomes, Kishore has planned to flip the decision 
+tree horizontally to simulate a reverse processing approach.
+
+Rules for Flipping the Decision Tree:
+	- The original root node becomes the new rightmost node.
+	- The original left child becomes the new root node.
+	- The original right child becomes the new left child.
+This transformation is applied level by level recursively.
+
+Note:
+------
+- Each node in the given tree has either 0 or 2 children.
+- Every right node in the tree has a left sibling sharing the same parent.
+- Every right node has no further children (i.e., they are leaf nodes).
+
+Your task is to help VishnuVardan flip the Decision Tree while following 
+the given transformation rules.
+
+Input Format:
+-------------
+Space separated integers, nodes of the tree.
+
+Output Format:
+--------------
+Print the list of nodes of flipped tree as described below.
+
+Sample Input-1:
+---------------
+4 2 3 5 1
+
+Sample Output-1:
+----------------
+5 1 2 3 4
+
+Sample Input-2:
+---------------
+4 2 5
+
+Sample Output-2:
+----------------
+2 5 4
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+D8P2 :
+
+In an Intelligence Agency, each senior officer supervises either two junior officers 
+or none. The senior officer is assigned a clearance level equal to the higher clearance 
+level of the two junior officers they supervise.
+
+The clearance levels are represented as integer values in the range [1, 50], and multiple 
+officers may have the same clearance level.
+
+At the end, all officers (senior and junior) are collectively referred to as agents in the system.
+
+You are provided with a hierarchical clearance level tree where each node represents 
+an officer's clearance level. The tree structure follows these rules:
+	- If a node has two children, its clearance level is the maximum of the two children's
+	  clearance levels.
+	- If a node has no children, it's clearance level is same as exists.
+	- The value -1 indicates an empty (null) position.
+Your task is to find the second highest clearance level among all agents in the agency. 
+If no such level exists, return -2.
+
+Input Format:
+-------------
+A single line of space separated integers, clearance levels of each individual.
+
+Output Format:
+--------------
+Print an integer, second top agent based on rank.
+
+Sample Input-1:
+---------------
+5 5 4 -1 -1 2 4
+
+Sample Output-1:
+----------------
+4
+
+Sample Input-2:
+---------------
+3 3 3 3 3
+
+Sample Output-2:
+----------------
+-2
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+D8JS1 - WEBSOCKETS
+
+<!--
+Employee Management WebSocket Application
+
+Objective:
+-----------
+Your task is to develop a WebSocket-based Employee Management System using Node.js. 
+This system will allow clients to:
+    1. Insert Employee Records (INSERT <name> <salary>)
+    2. Retrieve Employee List (RETRIEVE)
+    3. Handle Invalid Commands (e.g., INVALID should return "Invalid command")
+Your goal is to implement and test a WebSocket-based server and client, 
+ensuring that all operations work correctly.
+
+Requirements:
+-------------
+1. Implement WebSocket Server
+	The server should:
+		-> Accept multiple client connections.
+		-> Process client messages and handle commands:
+			1. INSERT <name> <salary> → Adds an employee to an in-memory array.
+			2. RETRIEVE → Returns all stored employees.
+			3. Any other command should return "Invalid command."
+		-> Maintain an in-memory array of employees (no database required).
+		-> Log each received command on the console.
+		
+		
+Expected Behavior
+-----------------
+
+============================================================================================
+Client Command			Server Response
+============================================================================================
+INSERT Alice 50000		"Employee inserted successfully."
+INSERT Bob 60000		"Employee inserted successfully."
+RETRIEVE				"ID: 1, Name: Alice, Salary: 50000"
+                        "ID: 2, Name: Bob, Salary: 60000"
+INVALID					"Invalid command."
+============================================================================================
+
+Note: 
+-> The server should run on port 8080.
+-> The system should allow multiple clients to connect.
+
+
+EXAMPLE URL value=>   ws://10.11.xx.xx:8080
+-->
+<config>
+    <url value=""></url>
+</config>
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
