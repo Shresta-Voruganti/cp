@@ -99,3 +99,143 @@ D7P2 :
 
 
 --------------------------------------------------------------------------------------------------------------
+
+D7S4 :
+
+In computer networking, subnetting is the process of dividing a larger IP network
+into multiple smaller subnetworks (subnets). Given a base network IP address,
+a CIDR (Classless Inter-Domain Routing) prefix, and the number of subnets required,
+write a Java program that calculates the starting addresses of all the subnets.
+
+Your program should take as input:
+- A base network address (e.g., 192.168.1.0).
+- A CIDR prefix (e.g., /26 means a subnet mask of 255.255.255.192).
+- The number of subnets to generate.
+
+The program should then compute and return the starting addresses of each subnet.
+
+## Input Format:
+
+A string NIP: The base network IP address (e.g., "192.168.1.0").
+An integer CIDR: The subnet mask prefix (e.g., 26 for /26).
+An integer numSubnets: The number of subnets to be generated.
+
+## Output Format:
+
+A list of subnet addresses, each representing the starting address of a subnet.
+
+## Sample Input:
+
+192.168.1.0
+26
+4
+
+## Sample Output:
+
+[192.168.1.0/28, 192.168.1.16/28, 192.168.1.32/28, 192.168.1.48/28]
+
+## Explanation:
+
+A /26 subnet has 64 IP addresses. The starting addresses of
+the first four subnets are:
+192.168.1.0/28,
+192.168.1.16/28,
+192.168.1.32/28,
+192.168.1.48/28
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+D7S5 :
+
+In networking, a subnet is a portion of a network with a defined range of IP addresses.
+Two subnets overlap if they share some common IP addresses. Given two network
+IP addresses with their respective CIDR notations, write a program that determines
+whether these subnets overlap.
+
+Your program should take as input:
+
+IP1: The first subnet’s network address.
+CIDR1: The CIDR notation (prefix length) for the first subnet.
+IP2: The second subnet’s network address.
+CIDR2: The CIDR notation (prefix length) for the second subnet.
+The program should return true if the subnets overlap and false otherwise.
+
+## Input Format:
+
+A string IP1: The first network IP address (e.g., "192.168.1.0").
+An integer CIDR1: The subnet mask prefix (e.g., 24 for /24).
+A string IP2: The second network IP address (e.g., "192.168.1.128").
+An integer CIDR2: The subnet mask prefix for the second subnet.
+
+## Output Format:
+
+A boolean value, if the two subnets overlap or not.
+
+## Sample Input:
+
+192.168.1.0
+24
+192.168.1.128
+25
+
+## Sample Output:
+
+true
+
+## Explanation:
+
+A /26 subnet has 64 IP addresses. The starting addresses of
+the first four subnets are:
+192.168.1.0
+192.168.1.64
+192.168.1.128
+192.168.1.192
+
+## Sample Input:
+
+10.0.0.0
+16
+10.1.0.0
+16
+
+## Sample Output:
+
+false
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+D7S6 :
+
+Write a Java program that determines the class of a given IPv4 address.
+The classification follows the standard IP address classes:
+- Class A: IP addresses where the first octet is in the range 1-127.
+- Class B: IP addresses where the first octet is in the range 128-191.
+- Class C: IP addresses where the first octet is in the range 192-223.
+- Multicast (Class D): IP addresses where the first octet is in the range 224-239.
+
+## Input Format:
+
+A string IP: The first network IP address (e.g.,0-239).
+
+## Output Format:
+
+A boolean value, if the two subnets overlap or not.
+
+## Sample Input:
+
+192.168.1.0
+
+## Sample Output:
+
+Class C
+
+## Explanation:
+
+The first octet 192 is within the Multicast range.
+
+
+------------------------------------------------------------------------------------------------------------------------------
