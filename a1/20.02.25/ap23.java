@@ -15,20 +15,22 @@ public class ap23 {
     public static int hamd(int n, int[] arr) {
         int left = 0;
         int right =  n - 1;
-        ArrayList<int[]> al = new ArrayList<>();
+        int sum = 0;
+//        ArrayList<int[]> al = new ArrayList<>();
         while(left < right) {
             int mid = left + 1;
             while(mid <= right) {
-                al.add(new int[]{arr[left], arr[mid]});
+//                al.add(new int[]{arr[left], arr[mid]});
+                sum += dist(arr[left], arr[mid]);
                 mid++;
             }
             left++;
         }
 
-        int sum = 0;
-        for(int[] pair : al) {
-            sum += dist(pair[0], pair[1]);
-        }
+//        int sum = 0;
+//        for(int[] pair : al) {
+//            sum += dist(pair[0], pair[1]);
+//        }
 
         return sum;
     }

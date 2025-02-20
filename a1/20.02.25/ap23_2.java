@@ -17,10 +17,23 @@ public class ap23_2 {
         for(int i = 0; i < n; i++) {
             for(int j = i + 1; j < n; j++) {
                 int val = arr[i] ^ arr[j];
-                sum += Integer.bitCount(val);
+//                sum += Integer.bitCount(val);
+                sum += bitcount(val);
             }
         }
 
         return sum;
+    }
+
+    public static int bitcount(int ele) {
+        int count = 0;
+        while(ele > 0) {
+            if((ele & 1) == 1) {
+                count++;
+            }
+            ele = ele >> 1;
+        }
+
+        return count;
     }
 }
