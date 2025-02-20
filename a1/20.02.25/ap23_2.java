@@ -15,7 +15,7 @@ public class ap23_2 {
     public static int hamd(int n, int[] arr) {
         int sum = 0;
         for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+            for(int j = i + 1; j < n; j++) {
                 int val = arr[i] ^ arr[j];
                 sum += Integer.bitCount(val);
             }
