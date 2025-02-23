@@ -1,0 +1,235 @@
+SP3 :
+
+You are given a rectangular grid of M x N bulbs arranged on a wall. 
+Each bulb can emit either blue light or red light, represented as:
+-> 0 → Blue Light
+-> 1 → Red Light
+
+Allowed Operation:
+-------------------
+-> Choose any row or column.
+-> Toggle each bulb in that row or column, i.e.:
+    Change 0 → 1 (Blue to Red).
+    Change 1 → 0 (Red to Blue).
+Your task is to determine if it is possible to turn all bulbs into blue light (all 0s) using any number of toggle operations.
+
+Constraints
+------------
+1 ≤ M, N ≤ 100
+The grid contains only 0s and 1s.
+
+Input Format:
+-------------
+Line 1: Two space-separated integers M and N, representing the size of the grid.
+Next M lines: Each line contains N space-separated integers (either 0 or 1).
+
+Output Format:
+--------------
+Print true if it is possible to turn all bulbs into 0. Otherwise, print false.
+
+Sample Input-1:
+---------------
+3 3
+1 0 1
+0 1 0
+1 0 1
+
+Sample Output-1:
+----------------
+true
+
+Explanation: 
+------------
+1) Toggle column 1 and column 3, the grid becomes:
+0 0 0
+1 1 1
+0 0 0
+
+2) Toggle row 2, the grid becomes:
+0 0 0
+0 0 0
+0 0 0
+
+3) Now, all bulbs emit blue light (0). Hence, output is true.
+
+Sample Input-2:
+---------------
+3 3
+1 0 0
+0 1 0
+0 0 0
+
+Sample Output-2:
+----------------
+false
+
+Explanation: 
+------------
+No sequence of toggle operations can make all bulbs 0.
+Hence, output is false.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+SP4 :
+
+Birbal is creating a new binary code system BBC (Birbal Binary Code) as follows:
+
+I	f(I)
+-------
+0	""
+1	"0"
+2	"1"
+3	"00"
+4	"01"
+5	"10"
+6	"11"
+7	"000"
+
+You are given an integer value I, where I is positive number.
+Your task is to find BBC representation of  the given number I.
+
+Input Format:
+-------------
+Line-1: An integer I
+
+Output Format:
+--------------
+Line-2: Print the BBC representation of I.
+
+
+Sample Input-1:
+---------------
+23
+
+Sample Output-1:
+----------------
+1000
+
+
+Sample Input-2:
+---------------
+45
+
+Sample Output-2:
+----------------
+01110
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+AP24 :
+
+You are given an array time where time[i] denotes the time taken by the ith bus to complete one trip.
+
+Each bus can make multiple trips successively; that is, the next trip can start immediately after completing the current trip. 
+Also, each bus operates independently; that is, the trips of one bus do not influence the trips of any other bus.
+
+You are also given an integer totalTrips, which denotes the number of trips all buses should make in total. 
+Return the minimum time required for all buses to complete at least totalTrips trips.
+
+Input Format:
+-------------
+Line-1: An integer n, size of time
+Line-2: n space separated integers, time[i]
+Line-3: An integer, totalTrips
+
+Sample Input-1:
+---------------
+3
+1 2 3
+5
+
+Sample Output-1: 
+----------------
+3
+ 
+Explanation:
+-------------
+-> At time t = 1, the number of trips completed by each bus are [1,0,0]. 
+  The total number of trips completed is 1 + 0 + 0 = 1.
+-> At time t = 2, the number of trips completed by each bus are [2,1,0]. 
+  The total number of trips completed is 2 + 1 + 0 = 3.
+-> At time t = 3, the number of trips completed by each bus are [3,1,1]. 
+  The total number of trips completed is 3 + 1 + 1 = 5.
+So the minimum time needed for all buses to complete at least 5 trips is 3.
+
+Sample Input-2:
+---------------
+1
+2
+1
+
+Sample Output-2: 
+----------------
+2
+
+
+Explanation:
+--------------
+There is only one bus, and it will complete its first trip at t = 2.
+So the minimum time needed to complete 1 trip is 2.
+ 
+
+Constraints:
+------------
+1 <= time.length <= 10^5
+1 <= time[i], totalTrips <= 10^7
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+AP25 :
+
+Given two integers left and right, return the count of numbers in the inclusive range [left, right]
+ having a prime number of set bits in their binary representation.
+
+Recall that the number of set bits an integer has the number of 1's present when written in binary.
+
+For example, 21 written in binary is 10101, which has 3 set bits.
+ 
+Input Format:
+-------------
+Line-1: Two separated integers
+
+Output Format:
+--------------
+Line-1: An integer
+
+Sample Input-1:
+---------------
+6  10
+
+Sample Output-1:
+---------------
+4
+
+Explanation:
+------------
+6  -> 110 (2 set bits, 2 is prime)
+7  -> 111 (3 set bits, 3 is prime)
+8  -> 1000 (1 set bit, 1 is not prime)
+9  -> 1001 (2 set bits, 2 is prime)
+10 -> 1010 (2 set bits, 2 is prime)
+4 numbers have a prime number of set bits.
+
+Sample Input-2:
+---------------
+10 15
+
+Sample Output-2:
+---------------
+5
+
+Explanation:
+------------
+10 -> 1010 (2 set bits, 2 is prime)
+11 -> 1011 (3 set bits, 3 is prime)
+12 -> 1100 (2 set bits, 2 is prime)
+13 -> 1101 (3 set bits, 3 is prime)
+14 -> 1110 (3 set bits, 3 is prime)
+15 -> 1111 (4 set bits, 4 is not prime)
+5 numbers have a prime number of set bits.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
