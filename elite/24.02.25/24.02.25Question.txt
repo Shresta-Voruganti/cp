@@ -1,0 +1,637 @@
+D12P1 :
+
+A shipping company is managing two cargo ships: a large cargo ship and 
+a smaller cargo ship. The company has divided the large cargo ship into 
+X compartments and the smaller cargo ship into Y compartments, where X > Y.
+
+Each compartment in both ships is loaded with a specific amount of cargo. 
+The company needs to relocate cargo from the large cargo ship to the smaller 
+cargo ship by selecting Y compartments from the large ship and transferring 
+their cargo to Y compartments in the smaller ship, maintaining the respective order.
+
+However, due to weight balance regulations, the amount in compartment n+1 
+should always be greater than or equal to that in the compartment n of the smaller 
+cargo ship, after the transferred from the large cargo ship.
+
+Your task is to help the company determine the number of ways they can transfer 
+the cargo while satisfying these regulations.
+
+Input Format:
+-------------
+Number of compartments in the large cargo ship (X).
+Number of compartments in the smaller cargo ship (Y).
+Cargo weights in compartments of the large cargo ship.
+Cargo weights in compartments of the smaller cargo ship.
+
+Output Format:
+----------------
+Return the number of valid ways to transfer the cargo.
+
+
+Sample Input:
+--------------
+5
+3
+1 5 2 4 7
+7 8 6
+
+Sample Output:
+----------------
+4
+
+Explanation:
+-----------
+The compartments from the large cargo ship can be selected as:
+- (1, 2, 7)
+- (1, 4, 7)
+- (5, 4, 7)
+- (2, 4, 7)  
+Thus, there are 4 valid ways to transfer the cargo.
+
+Sample Input:
+--------------
+4
+2
+7 7 7 7
+3 4
+
+Sample Output:
+----------------
+6
+
+Explanation:
+-----------
+The compartments from the large cargo ship can be selected as:
+- (1st, 2nd) (7,7)
+- (1st, 3rd) (7,7)
+- (1st, 4th) (7,7)
+- (2nd, 3rd) (7,7)
+- (2nd, 4th) (7,7)
+- (3rd, 4th) (7,7)  
+
+Thus, there are 6 valid ways to transfer the cargo.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+D12P2 :
+
+Imagine you're an archivist in the ancient Kingdom of Numeria, tasked with 
+recording the royal lineage on a sacred scroll. Every monarch is identified 
+by a unique number, and the family tree unfolds in a very specific way. 
+Your mission is to transcribe this dynasty using a method that adheres 
+to the following customs:
+
+Royal Inscription:  
+- Each monarch’s unique number is written as their signature on the scroll.
+
+Enclosing Descendants:  
+- If a monarch has offspring, their descendants must be recorded inside parentheses 
+  immediately following the monarch’s number.
+    - The first-born (or primary heir) is enclosed in its own set of parentheses.
+    - If there is a second-born, their number is similarly enclosed, following 
+      the first-born’s parentheses.
+
+Omitting Redundant Markings:  
+- Empty pairs of parentheses are generally left off the scroll to keep the record neat.
+- However, if a monarch has a second-born but first-born is no more, you must include 
+  an empty pair of parentheses to clearly mark the absence of a primary heir—ensuring 
+  the lineage is accurately mapped.
+
+Your task is to create such an inscription that perfectly reflects the 
+hierarchical structure of the royal lineage.
+
+Example 1:
+Input=
+1 2 3 4
+Output=
+1(2(4))(3)
+
+Explanation:
+        1
+       / \
+      2   3
+     /    
+    4
+
+- Monarch 1 is the founding ruler. He has two heirs: Monarch 2 (first-born) and 
+  Monarch 3 (second-born).
+- Monarch 2 has a single descendant, Monarch 4, recorded as his first-born.
+- Since empty markings for non-existent descendants are omitted (because they 
+  don't add any information), the inscription is kept concise.
+- Thus, the final transcription on the sacred scroll is: "1(2(4))(3)"
+
+Example 2:
+Input=
+1 2 3 -1 4
+Output=
+1(2()(4))(3)
+
+Explanation:
+        1
+       / \
+      2   3
+       \
+        4
+
+- Monarch 1 is the founding ruler with two heirs: Monarch 2 and Monarch 3.
+- In this dynasty, Monarch 2 first-born is no more alive but does have a younger 
+  descendant, Monarch 4.
+- To ensure the record accurately reflects the gap in succession for Monarch 2, 
+  an empty pair of parentheses is added before representing Monarch 4. 
+  This explicitly marks the absence of a first-born heir.
+- Therefore, the recorded inscription becomes: "1(2()(4))(3)"
+
+Example 3:
+input=
+1 2 3 4 -1 5 6 -1 7
+output=
+1(2(4()(7)))(3(5)(6))
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+D12P3 :
+
+Imagine you are designing a network of secret corridors in an ancient castle. 
+Each chamber in the castle leads to at most two other chambers through 
+hidden passageways, forming a branching layout. 
+The castle’s "longest secret route" is defined as the maximum number of corridors 
+you must traverse to get from one chamber to another (without repeating the corridor). 
+This route may or may not pass through the main entry chamber.
+
+Your task is to compute the length of longest secret route between 
+two chambers which is represented by the number of corridors between them.
+
+Example 1
+input=
+1 2 3 4 5 
+output=
+3
+
+Structure:
+       1
+      / \
+     2   3
+    / \
+   4   5
+
+Explanation:
+The longest secret route from chamber 4 to chamber 3 
+(alternatively, from chamber 5 to chamber 3) along the route:
+4 → 2 → 1 → 3
+This path has 3 corridors (4–2, 2–1, 1–3), so the length is 3.
+
+Example 2:
+input=
+1 -1 2 3 4
+output=
+2
+
+Structure:
+   1
+    \
+     2
+    / \
+   3   4
+
+Explanation:
+The longest secret route from chamber 3 to chamber 4 
+(alternatively, from chamber 1 to chamber 4) along the route:
+3 → 2 → 4
+This path has 2 corridors (3–2, 2–4), so the length is 2.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+D12JS4 :
+
+/*
+Write a MongoDB query to find students aged between 18 and 21
+and display student_id, name and age only.
+
+Collection: 'stucollection'
+
+Reference Document:
+----------------------
+{
+    "student_id": "S1001",
+    "name": "Alice Johnson",
+    "age": 18,
+    "contact": {
+      "email": "alice@example.com",
+      "phone": "123-456-7890",
+      "address": {
+        "street": "123 Maple St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    "enrolled_courses": ["Java", "Python"],
+    "exams": [
+      {
+        "subject": "Java",
+        "scores": [
+          { "type": "quiz", "score": 80 },
+          { "type": "midterm", "score": 75 },
+          { "type": "final", "score": 90 }
+        ],
+        "passed": true
+      },
+      {
+        "subject": "Python",
+        "scores": [
+          { "type": "quiz", "score": 70 },
+          { "type": "midterm", "score": 65 },
+          { "type": "final", "score": 85 }
+        ],
+        "passed": true
+      }
+    ],
+    "skills": ["Java", "Spring Boot"],
+    "guardian": {
+      "name": "Robert Johnson",
+      "relation": "Father",
+      "contact": "robert.j@example.com"
+    }
+}
+
+Sample Output:
+--------------
+[                                                                               
+  {                                                                             
+    student_id: 'S1001',                                                        
+    name: 'Alice Johnson',                                                      
+    age: 18                                                                     
+  },                                                                            
+  {                                                                             
+    student_id: 'S1002',                                                        
+    name: 'Bob Smith',                                                          
+    age: 19                                                                     
+  }
+]
+
+
+Query Reference:
+-------------------
+printjson() : JS library function to display the JSON Object data.
+In db.<collection>.find():
+	db -> Refers to the database.
+	<collection> -> Your collection name
+	find() -> Method to write the selection and projection part of the query.
+
+*/
+	
+printjson(
+    //db.stucollection.find({"age":{$gte:18,$lte:21}},{"student_id":1,"name":1,"age":1,"_id":0})
+	db.stucollection.aggregate([{$match:{age:{$gte:18,$lte:21}}},{$project:{student_id:1,name:1,age:1,_id:0}}])
+)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+D12JS5 :
+
+/*
+Write a MongoDB query to find students whose guardian is a "Father"
+and display student_id, name only.
+
+Collection: 'stucollection'
+
+Reference Document:
+----------------------
+{
+    "student_id": "S1001",
+    "name": "Alice Johnson",
+    "age": 18,
+    "contact": {
+      "email": "alice@example.com",
+      "phone": "123-456-7890",
+      "address": {
+        "street": "123 Maple St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    "enrolled_courses": ["Java", "Python"],
+    "exams": [
+      {
+        "subject": "Java",
+        "scores": [
+          { "type": "quiz", "score": 80 },
+          { "type": "midterm", "score": 75 },
+          { "type": "final", "score": 90 }
+        ],
+        "passed": true
+      },
+      {
+        "subject": "Python",
+        "scores": [
+          { "type": "quiz", "score": 70 },
+          { "type": "midterm", "score": 65 },
+          { "type": "final", "score": 85 }
+        ],
+        "passed": true
+      }
+    ],
+    "skills": ["Java", "Spring Boot"],
+    "guardian": {
+      "name": "Robert Johnson",
+      "relation": "Father",
+      "contact": "robert.j@example.com"
+    }
+}
+
+Sample Output:
+--------------
+[                                                                               
+  {                                                                             
+    student_id: 'S1001',                                                        
+    name: 'Alice Johnson'                                                       
+  },                                                                            
+  {                                                                             
+    student_id: 'S1003',                                                        
+    name: 'Charlie Williams'                                                    
+  }
+]
+
+
+Query Reference:
+-------------------
+printjson() : JS library function to display the JSON Object data.
+In db.<collection>.find():
+	db -> Refers to the database.
+	<collection> -> Your collection name
+	find() -> Method to write the selection and projection part of the query.
+
+*/
+	
+printjson(
+	db.stucollection.aggregate([{$match:{"guardian.relation":"Father"}},{$project:{student_id:1,name:1,_id:0}}])
+)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+D12JS6 :
+
+/*
+Write a MongoDB query to count how many students are enrolled in each course.
+Print the data in sorted order of course name.
+
+Collection: 'stucollection'
+
+Reference Document:
+----------------------
+{
+    "student_id": "S1001",
+    "name": "Alice Johnson",
+    "age": 18,
+    "contact": {
+      "email": "alice@example.com",
+      "phone": "123-456-7890",
+      "address": {
+        "street": "123 Maple St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    "enrolled_courses": ["Java", "Python"],
+    "exams": [
+      {
+        "subject": "Java",
+        "scores": [
+          { "type": "quiz", "score": 80 },
+          { "type": "midterm", "score": 75 },
+          { "type": "final", "score": 90 }
+        ],
+        "passed": true
+      },
+      {
+        "subject": "Python",
+        "scores": [
+          { "type": "quiz", "score": 70 },
+          { "type": "midterm", "score": 65 },
+          { "type": "final", "score": 85 }
+        ],
+        "passed": true
+      }
+    ],
+    "skills": ["Java", "Spring Boot"],
+    "guardian": {
+      "name": "Robert Johnson",
+      "relation": "Father",
+      "contact": "robert.j@example.com"
+    }
+}
+
+Sample Output:
+--------------
+[                                                                               
+  {                                                                             
+    _id: 'C++',                                                                 
+    total_students: 4                                                           
+  },                                                                            
+  {                                                                             
+    _id: 'ML',                                                                  
+    total_students: 6                                                           
+  }
+]
+
+Query Reference:
+-------------------
+printjson() : JS library function to display the JSON Object data.
+In db.<collection>.find():
+	db -> Refers to the database.
+	<collection> -> Your collection name
+	find() -> Method to write the selection and projection part of the query.
+*/
+	
+printjson(
+	db.stucollection.aggregate([
+	    {$unwind:"$enrolled_courses"},
+	    {$group:{_id:"$enrolled_courses",total_students:{$sum:1}}},
+	    {$sort:{_id:1}}])
+)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+D12JS7 :
+
+/*
+Write a MongoDB query to find the Total Number of Students in Each City
+Print the output in the sorted order of the city name.
+
+Collection: 'stucollection'
+
+Reference Document:
+----------------------
+{
+    "student_id": "S1001",
+    "name": "Alice Johnson",
+    "age": 18,
+    "contact": {
+      "email": "alice@example.com",
+      "phone": "123-456-7890",
+      "address": {
+        "street": "123 Maple St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    "enrolled_courses": ["Java", "Python"],
+    "exams": [
+      {
+        "subject": "Java",
+        "scores": [
+          { "type": "quiz", "score": 80 },
+          { "type": "midterm", "score": 75 },
+          { "type": "final", "score": 90 }
+        ],
+        "passed": true
+      },
+      {
+        "subject": "Python",
+        "scores": [
+          { "type": "quiz", "score": 70 },
+          { "type": "midterm", "score": 65 },
+          { "type": "final", "score": 85 }
+        ],
+        "passed": true
+      }
+    ],
+    "skills": ["Java", "Spring Boot"],
+    "guardian": {
+      "name": "Robert Johnson",
+      "relation": "Father",
+      "contact": "robert.j@example.com"
+    }
+}
+
+Sample Output:
+--------------
+[                                                                               
+  {                                                                             
+    total_students: 1,                                                          
+    city: 'Atlanta'                                                             
+  },                                                                            
+  {                                                                             
+    total_students: 1,                                                          
+    city: 'Austin'                                                              
+  }
+]
+
+
+Query Reference:
+-------------------
+printjson() : JS library function to display the JSON Object data.
+In db.<collection>.find():
+	db -> Refers to the database.
+	<collection> -> Your collection name
+	find() -> Method to write the selection and projection part of the query.
+
+*/
+	
+printjson(
+	db.stucollection.aggregate([
+	    {$group:{total_students:{$sum:1},_id:"$contact.address.city"}},
+	    {$project:{total_students:1,city:"$_id",_id:0}},
+	    {$sort:{city:1}}
+	    ])
+)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+D12JS8 :
+
+/*
+Write a MongoDB query to find the average exam score for each student
+Print the output in the sorted order of the student names.
+
+Collection: 'stucollection'
+
+Reference Document:
+----------------------
+{
+    "student_id": "S1001",
+    "name": "Alice Johnson",
+    "age": 18,
+    "contact": {
+      "email": "alice@example.com",
+      "phone": "123-456-7890",
+      "address": {
+        "street": "123 Maple St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    "enrolled_courses": ["Java", "Python"],
+    "exams": [
+      {
+        "subject": "Java",
+        "scores": [
+          { "type": "quiz", "score": 80 },
+          { "type": "midterm", "score": 75 },
+          { "type": "final", "score": 90 }
+        ],
+        "passed": true
+      },
+      {
+        "subject": "Python",
+        "scores": [
+          { "type": "quiz", "score": 70 },
+          { "type": "midterm", "score": 65 },
+          { "type": "final", "score": 85 }
+        ],
+        "passed": true
+      }
+    ],
+    "skills": ["Java", "Spring Boot"],
+    "guardian": {
+      "name": "Robert Johnson",
+      "relation": "Father",
+      "contact": "robert.j@example.com"
+    }
+}
+
+Sample Output:
+---------------
+[                                                                               
+  {                                                                             
+    _id: 'Alice Johnson',                                                       
+    avg_score: 77.5                                                             
+  },                                                                            
+  {                                                                             
+    _id: 'Ava Wilson',                                                          
+    avg_score: 81.83333333333333                                                
+  }
+]
+ 
+Query Reference:
+-------------------
+printjson() : JS library function to display the JSON Object data.
+In db.<collection>.find():
+	db -> Refers to the database.
+	<collection> -> Your collection name
+	find() -> Method to write the selection and projection part of the query.
+
+*/
+	
+printjson(
+	db.stucollection.aggregate([
+	    {$unwind:"$exams"},
+	    {$unwind:"$exams.scores"},
+	    {$group:{_id:"$name",avg_score:{$avg:"$exams.scores.score"}}},
+	    {$sort:{_id:1}}
+	    ])
+)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
