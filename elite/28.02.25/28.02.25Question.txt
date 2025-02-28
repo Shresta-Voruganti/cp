@@ -1,0 +1,277 @@
+D15P1 :
+
+Imagine you're a botanist managing a long row of garden plots. Each plot is 
+planted with a flower that has a unique color code represented by an integer. 
+You are given an array garden of length n, where each element denotes the color 
+of the flower in that plot, and an integer k which indicates the number of 
+consecutive plots you will examine at a time. Your objective is to determine 
+how many different flower colors appear in every contiguous block of k plots.
+
+Return an array result where result[i] is the count of unique flower colors in 
+the section of the garden from plot i to plot i + k - 1.
+
+Example 1:
+
+Input: 
+7				\\n
+1 2 3 2 2 1 3	\\array garden
+3				\\k
+
+Output: 
+[3, 2, 2, 2, 3]
+
+Explanation:
+
+For plots 0 to 2: [1,2,3] → 3 unique colors
+For plots 1 to 3: [2,3,2] → 2 unique colors
+For plots 2 to 4: [3,2,2] → 2 unique colors
+For plots 3 to 5: [2,2,1] → 2 unique colors
+For plots 4 to 6: [2,1,3] → 3 unique colors
+Example 2:
+
+Input: 
+7
+1 1 1 1 2 3 4
+4
+
+Output: 
+[1, 2, 3, 4]
+
+Explanation:
+For plots 0 to 3: [1,1,1,1] → 1 unique color
+For plots 1 to 4: [1,1,1,2] → 2 unique colors
+For plots 2 to 5: [1,1,2,3] → 3 unique colors
+For plots 3 to 6: [1,2,3,4] → 4 unique colors
+
+Constraints:
+• 1 <= k <= garden.length <= 10^5
+• 1 <= garden[i] <= 10^5
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+D15P2 :
+
+Cliff Shaw is working on the singly linked list.
+He is given a list of boxes arranged as singly linked list,
+where each box is printed a positive number on it.
+
+Your task is to help Mr Cliff to find the given list is equivalent to 
+the reverse of it or not. If yes, print "true", otherwise print "false"
+
+Input Format:
+-------------
+Line-1: space separated integers, boxes as list.
+
+Output Format:
+--------------
+Print a boolean a value.
+
+
+Sample Input-1:
+---------------
+3 6 2 6 3
+
+Sample Output-1:
+----------------
+true
+
+
+Sample Input-2:
+---------------
+3 6 2 3 6
+
+Sample Output-2:
+----------------
+false
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+D15P3 :
+
+Imagine you are a secret agent tasked with sending encoded messages. 
+Each original message is a string of lowercase letters, and you can disguise 
+it by replacing selected, non-adjacent segments with the count of characters 
+in those segments. However, the encoding must follow strict rules: only 
+non-empty segments can be replaced, replacements cannot be adjacent, and any 
+numbers used must not have leading zeros.
+
+For instance, the message "substitution" can be encoded in various ways, such as:
+
+• "s10n" (keeping 's', replacing the next 10 characters with 10, and ending with 'n')  
+• "sub4u4" (keeping "sub", replacing 4 characters, then 'u', and replacing 4 more characters)  
+• "12" (replacing the entire message with its length)  
+• "su3i1u2on" (using a different pattern of replacements)  
+• "substitution" (leaving the message unaltered)
+
+Invalid encodings include:
+
+• "s55n" (because the replaced segments are adjacent)  
+• "s010n" (the number 010 has a leading zero)  
+• "s0ubstitution" (attempts to replace an empty segment)
+
+Your task is: given an original message and an encoded version, 
+determine if the encoded version is a valid secret code for the message.
+
+Example 1:
+
+Input: 
+internationalization
+i12iz4n
+  
+Output: 
+true  
+
+Explanation: "internationalization" can be encoded as "i12iz4n" by keeping 'i', 
+replacing 12 letters, keeping "iz", replacing 4 letters, and then ending with 'n'.
+
+Example 2:
+
+Input: 
+apple
+a2e
+  
+Output: 
+false  
+
+Explanation: The encoding "a2e" does not correctly represent "apple".
+
+Time Complexity: O(n) where n=max(len(word),len(abbr))
+Auxiliary Space:  O(1).
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+D15P4 :
+
+Two brothers want to play a game, 
+The rules of the game are: one player gives two sorted lists of 
+numerical elements and a number (sum). 
+The opponent has to find the closest pair of elements 
+to the given sum.
+-> pair consists of elements from each list
+
+Please help those brothers to develop a program, that takes 
+two sorted lists as input and return a pair as output.
+
+Input Format:
+-------------
+size of list_1
+list_1 values
+size of list_2
+list_2 values
+closest number
+
+Output Format:
+--------------
+comma-separated pair
+
+Sample Input-1:
+---------------
+4
+1 4 5 7
+4
+10 20 30 40
+32
+Sample Output-1
+---------------
+1, 30
+
+Sample Input-2
+---------------
+3
+2 4 6
+4
+5 7 11 13
+15
+sample output-2
+---------------
+2, 13
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+D15P5 :
+
+
+Trivikram and Vamshi are friends. They need to write N screen-plays, numbered 
+from 1 to N. Each screen-play requires specific number of papers to write.
+
+Initially, Trivikram has T number of papers in his box and Vamshi has V number of 
+papers in his box. They have started the screenplay writing in the following way:
+    - Trivikram starts from screen-play number 1 to N and Vamshi starts from N to 1.
+    - They begin writing the screen-plays at same time.
+    - Each screen-play takes same amount of time, irrespective of its size.
+    - Trivikram or Vamshi must write the screen-play, if they have enough number 
+      of papers in their respective boxes. Otherwise, they first have to refill 
+      their boxes (instantly) and then write the screen-play.
+    - In case, Trivikram and Vamshi reach the same screen-play, the one with more
+      number of papers currently in their box should write the screen-play. If 
+      they have the same number of papers, then Trivikram should write the 
+      screen-play.
+
+You are given 1-indexed integer array screen-play[] of size N, where screen-play[i]
+is the number of papers required for ith screen-play, and two integers T and V.
+Your task is to return the number of times they have to refill to write all the 
+screen-plays.
+
+Constraint:
+-----------
+max(screen-play) < T,V < 10^9
+
+
+Input Format:
+-------------
+Line-1: 3 space separated integers, indicates N, T and V.
+Line-2: N space separated integers, screen-plays[].
+
+Output Format:
+--------------
+Print an integer result.
+
+
+Sample Input-1:
+---------------
+6 10 10
+5 3 4 4 5 4
+
+Sample Output-1:
+----------------
+2
+
+Explanation: 
+------------
+- Initially, Trivikram and Vamshi have 10 papers each in their boxes.
+- Trivikram writes Screen-play-1, Vamshi writes Screen-play-6.
+- Trivikram and Vamshi now have 5 and 6 papers in their boxes respectively.
+- Trivikram writes Screen-play-2, Vamshi writes Screen-play-5.
+- Trivikram and Vamshi now have 2 and 1 papers in their boxes respectively.
+- Trivikram and Vamshi do not have enough number of papers to write screen-play-3 
+and screen-play-4 , so they refills their boxes and finished the screenplays.
+So, the total number of times they have to refill is 0 + 0 + 1 + 1 + 0 + 0 = 2.
+
+
+Sample Input-2:
+---------------
+3 9 7
+4 5 2
+
+Sample Output-2:
+----------------
+0
+
+Explanation: 
+------------
+- Initially, Trivikram and Vamshi have 9 papers and 7 papers each in their boxes.
+- Trivikram writes Screen-play-1, Vamshi writes Screen-play-3.
+- Trivikram and Vamshi now have 5 papers each in their boxes respectively.
+- Now, Trivikram writes Screen-play-2. Finished the screenplays.
+So, the total number of times they have to refill is 0 + 0 + 0 = 0.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
