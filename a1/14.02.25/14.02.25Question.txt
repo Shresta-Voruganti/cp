@@ -1,4 +1,4 @@
-AP15 :
+AP15 - Min Number Of Refills:
 
 Andy and Berry are serving water to N guests seated in a row. 
 The guests are labeled from 0 to N-1, where the i-th guest is seated at position x = i.
@@ -69,7 +69,7 @@ Total refills = 2.
 ------------------------------------------------------------------------------------------------------------------------------
 
 
-AP16 :
+AP16 - Sort Colors:
 
 You are given an array nums of size n, where each element represents an object colored red, white, or blue. 
 Your task is to sort the array in-place so that all objects of the same color are adjacent, following the order:
