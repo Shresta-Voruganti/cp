@@ -1,4 +1,4 @@
-AP9 :
+AP9 - MinSteps:
 
 Given a positive integer n, you can apply one of the following operations:
 
