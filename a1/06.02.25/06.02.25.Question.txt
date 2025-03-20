@@ -1,4 +1,4 @@
-SP1 :
+SP1 - Diet Plan Performance:
 
 A dieter records the number of calories they consume each day in an array calories, 
 where calories[i] represents the calories consumed on the i-th day. 
@@ -92,7 +92,7 @@ Constraints:
 
 ------------------------------------------------------------------------
 
-AP1 :
+AP1 - Smallest Element:
 
 You are given an array consisting of N integers, and an integer, K. 
 Your task is to determine the minimum element in subarrays of size K.
