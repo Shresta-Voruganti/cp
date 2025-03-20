@@ -1,4 +1,4 @@
-AP5 :
+AP5 - Boat:
 
 You are given an array people, where each element people[i] represents the weight of the i-th person. 
 You also have an unlimited number of boats, but each boat has a maximum weight capacity defined by limit.
@@ -68,7 +68,7 @@ Total boats required: 4.
 ------------------------------------------------------------------------------------
 
 
-AP7 : 
+AP7 - Re Color: 
 
 You are given a 0-indexed string blocks of length n, 
 where each character in blocks[i] represents the color of the i-th block:
@@ -138,7 +138,7 @@ Constraints:
 ----------------------------------------------------------------------------------------
 
 
-AP8 :
+AP8 - Good Strings:
 
 A string is good if there are no repeated characters.
 Given a string s, return the number of good substrings of length three in s.
@@ -175,7 +175,7 @@ The good substrings are "abc", "bca", "cab", and "abc".
 -------------------------------------------------------------------------------------------
 
 
-AP9 :
+AP9 - Fruits:
 
 You are visiting a farm that has a single row of fruit trees arranged from left to right.
 
@@ -231,7 +231,7 @@ If we had started at the first tree, we would only pick from trees [1,2].
 -------------------------------------------------------------------------------------------------
 
 
-AP10 :
+AP10 - Flexible Sliding Window:
 
 You are given an array books, where each element represents the time (in minutes) required to read a book. 
 You are also given an integer k, which represents the total available reading time in minutes.
