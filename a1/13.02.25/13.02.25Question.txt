@@ -1,4 +1,4 @@
-SP5 :
+SP5 - Closest Pair:
 
 Two brothers are playing a game based on two sorted lists of numerical elements and a target sum.
 
@@ -64,7 +64,7 @@ The closest pair to 15 is (2,13) → 2 + 13 = 15, which is an exact match.
 -------------------------------------------------------------------------------------------------------
 
 
-SP6 :
+SP6 - Palindrome List:
 
 /*
 Cliff Shaw is working on the singly linked list.
