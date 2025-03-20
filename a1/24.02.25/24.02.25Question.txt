@@ -1,4 +1,4 @@
-AP26 :
+AP26 - Book Store:
 
 There is a bookstore owner that has a store open for n minutes. Every minute, some number of customers enter the store.
 You are given an integer array customers of length n where customers[i] is the number of the customer
@@ -53,7 +53,7 @@ grumpy[i] is either 0 or 1.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-AP27 :
+AP27 - Impossible OR:
 
 You are given a 0-indexed integer array nums.
 
@@ -95,7 +95,7 @@ Constraints:
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-AP28 :
+AP28 - Screen Play:
 
 Trivikram and Vamshi are friends. They need to write N screen-plays, numbered 
 from  to N. Each screen-play requires specific number of papers to write.
