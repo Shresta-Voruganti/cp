@@ -1,4 +1,4 @@
-SP3 :
+SP3 - Row Column Flips:
 
 You are given a rectangular grid of M x N bulbs arranged on a wall. 
 Each bulb can emit either blue light or red light, represented as:
@@ -71,7 +71,7 @@ Hence, output is false.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-SP4 :
+SP4 - Encode Number:
 
 Birbal is creating a new binary code system BBC (Birbal Binary Code) as follows:
 
@@ -118,7 +118,7 @@ Sample Output-2:
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-AP24 :
+AP24 - Binary Trips:
 
 You are given an array time where time[i] denotes the time taken by the ith bus to complete one trip.
 
@@ -179,7 +179,7 @@ Constraints:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-AP25 :
+AP25 - Prime Set Bits:
 
 Given two integers left and right, return the count of numbers in the inclusive range [left, right]
  having a prime number of set bits in their binary representation.
