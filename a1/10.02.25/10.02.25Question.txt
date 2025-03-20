@@ -1,4 +1,4 @@
-SP3 :
+SP3 - Kth Smallest Subarray Sum:
 
 A tenth standard student has been given a task to analyze a set of P subject marks.
 
@@ -62,7 +62,7 @@ The 7th smallest is 8
 
 -------------------------------------------------
 
-AP3 :
+AP3 - Distinct Max Of Subarrays Of Size K:
 
 You are given an array of N heights. 
 Your task is to find the maximum sum of any contiguous subarray of length L, 
@@ -122,7 +122,7 @@ Since no valid subarray exists, return 0.
 ---------------------------------------------------------------------------
 
 
-AP10 :
+AP10 - Fighter:
 
 There is a Game where a fighter consumes power[i] on the i-th hour. 
 
@@ -204,7 +204,7 @@ power[3] and power[4] are greater than upper so 2 points are gained.
 
 -------------------------------------------------------------------------------
 
-SP4 :
+SP4 - Max Of Subarray Of K Window:
 
 Mr.Ram is a sales manager of Dmart, for his analysis he has to monitor 
 sales of Dmart every day. He need to send report of maximum sales 
