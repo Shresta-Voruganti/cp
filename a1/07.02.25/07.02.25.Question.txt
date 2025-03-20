@@ -1,4 +1,4 @@
-SP2 :
+SP2 - Distinct Numbers In Each Subarray:
 
 There are N small cartoons, and each cartoon contains a balloon of a specific color, represented by an integer.
 
@@ -64,7 +64,7 @@ Sample Output-3:
 
 -----------------------------------------------------------------------
 
-AP2 :
+AP2 - Duplicate Window:
 
 Given an integer array of nums and an integer window size X, 
 return true if there are duplicate values (nums[i]== nums[j])in that Window(X)
