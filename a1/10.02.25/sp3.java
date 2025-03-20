@@ -9,26 +9,44 @@ public class sp3 {
         for(int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(kthsum(arr, n, k));
+        System.out.println(kthsum(arr, k));
         sc.close();
     }
 
-    public static int kthsum(int[] arr, int n, int k) {
-        // int numsets = (int) Math.pow(2, n);
-        // Arrays.sort(arr);
-        int numsets = (n * (n + 1)) / 2;
-        if(k > numsets) {
-            return 0;
+    public static int kthsum(int[] arr, int k) {
+        int min = Integer.MAX_VALUE; int sum = 0;
+        for(int num : arr) {
+            min = Math.min(min, num);
+            sum += num;
         }
-        if(k <= n) {
-            return arr[k - 1];
+        int low = min; int high = sum;
+        while(low < high) {
+            int mid = low + (high - low)/2;
+            int count = countSubarray(arr, mid);
+            if(count < k) {
+                low = mid + 1;
+            }
+            else {
+                high = mid;
+            }
         }
-        int sum  = 0;
-        int wsize = (k / n) + 1;
-        int start = (k % n) - 1;
-        for(int i = start; i < wsize; i++) {
-            sum += arr[i];
+        return low;
+    }
+
+    public static int countSubarray(int[] arr, int mid) {
+        int count = 0;
+        int sum = 0;
+        int left = 0; int right = 0;
+        int n = arr.length;
+        while(right < n) {
+            sum += arr[right];
+            if(sum > mid) {
+                sum -= arr[left];
+                left++;
+            }
+            count += right - left + 1;
+            right++;
         }
-        return sum;
+        return count;
     }
 }
