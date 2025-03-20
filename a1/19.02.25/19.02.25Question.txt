@@ -1,4 +1,4 @@
-AP20 :
+AP20 - Decode:
 
 Mr Bond is a spy and he is working on a mission to solve that mission he needs 
 list of numbers which are password to a secret locker, he got a secret code from his informer 
@@ -74,7 +74,7 @@ n == code.length
 ------------------------------------------------------------------------------------------------------------------------------
 
 
-AP21 :
+AP21 - Tallest Tree:
 
 In a forest, There are N redwoord trees in a row.
 You are given the heights of the trees as heights[],
@@ -125,7 +125,7 @@ Sample Output-2:
 --------------------------------------------------------------------------------------------------------------------
 
 
-AP22 :
+AP22 - Binary Gap:
 
 You are given a positive integer n. 
 Your task is to determine the longest distance between any two adjacent 1s in its binary representation.
