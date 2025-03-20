@@ -1,4 +1,4 @@
-AP29 :
+AP29 - Squares Of Sorted Array:
 
 Given an integer array nums sorted in non-decreasing order, 
 return an array of the squares of each number sorted in non-decreasing order.
@@ -25,7 +25,7 @@ Sample Output-1:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-AP1 :
+AP1 - Min Jumps:
 
 Given an array of integers arr, you are initially positioned at the first index of the array.
 
