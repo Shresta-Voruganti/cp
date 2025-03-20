@@ -1,4 +1,4 @@
-SP7 :
+SP7 - Valid Word Abbreviation:
 
 Given a non-empty string s and an abbreviation abbr, 
 return whether the string matches with the given abbreviation.
@@ -44,7 +44,7 @@ Auxiliary Space:  O(1).
 --------------------------------------------------------------------------------------------------------------
 
 
-AP17 :
+AP17 - Three Sum Closet:
 
 You are given an integer array nums of length n and an integer target. 
 Your task is to find three integers in nums such that their sum is closest to the given target.
@@ -87,7 +87,7 @@ Sample Output-2:
 --------------------------------------------------------------------------------------------------------------------
 
 
-AP19 :
+AP19 - Closest Triplet Sum:
 
 You are given three sorted integer arrays A[], B[], and C[], and an integer target.
 
@@ -155,7 +155,7 @@ The sum 10 + 9 + 8 = 27, which is the closest sum to 30 (minimum absolute differ
 -----------------------------------------------------------------------------------------------------------------------
 
 
-AP18 :
+AP18 - Minimise Max Difference:
 
 You are given three sorted integer arrays A[], B[], and C[]. 
 
@@ -213,7 +213,7 @@ Sample Output-2:
 ----------------------------------------------------------------------------------------------------------------------
 
 
-AP6 :
+AP6 - Remove One Duplicate:
 
 You are given an array nums of size n+1, 
 where each element is an integer between 1 and n (inclusive).
@@ -273,7 +273,7 @@ Constraints:
 ---------------------------------------------------------------------------------------------------------------------
 
 
-AP4 :
+AP4 - Index Of Zero:
 
 
 
