@@ -1,4 +1,4 @@
-AP4 :
+AP4 - Closed Brackets:
 
 Clavius, the person who suggested grouping of data using brackets.
 He has suggested that the group of brackets should be Well-Formed.
@@ -45,7 +45,7 @@ Sample Output-2:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-AP2 :
+AP2 - Distinct Shapes:
 
 Viraj Aanand is a wedding planner, He ordered his assistant to decorate a wall.
 The decorator plans to decorate the wall with two different colored balloons.
